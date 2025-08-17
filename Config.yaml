@@ -1,0 +1,35 @@
+server:
+  host: '0.0.0.0'
+  comm_port: 5050
+  trans_port: 6060
+
+training:
+  sync_mode: false
+  async_concurrency: 0.125
+  sync_participant: 0.25
+  learning_rate: 0.01
+  learning_rate_decay: 0.98
+  epochs: 3
+  upload_ratio: 0.25
+  download_ratio: 1.0
+  consistent_ratio: true
+  model_version: 0
+
+dataset:
+  split: false
+  dataname: 'cifar10'
+  modelname: "vgg11"
+  alpha: 0.1
+  batch_size: 16
+  num_client: 128
+  random_seed: 1234
+
+paths:
+  paths:
+    upload_model: '../Model-Client'
+    upload_config: '../Train-Config'
+    upload_dataset: '../Dataset-Client'
+    log_path_server_fedbridge: '../parameter_server_fedbridge.log'
+    log_path_server_manager: '../parameter_server_manager.log'
+    run_time: '../Run-Time'
+
